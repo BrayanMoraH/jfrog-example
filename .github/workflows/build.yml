@@ -32,5 +32,5 @@ jobs:
 
       - name: Upload Artifact to Artifactory
         run: |
-          jf rt u "target/my-library-*.jar" "libs-release-local/com/example/my-library/0.0.1-SNAPSHOT/"
-          jf rt u "target/my-library.pom" "libs-release-local/com/example/my-library/0.0.1-SNAPSHOT/my-library-0.0.1-SNAPSHOT.pom"
+          jf rt u "target/my-library-*.jar" "libs-release-local/com/example/my-library/0.0.1-SNAPSHOT/" --flat=true
+          jf rt u "target/my-library.pom" "libs-release-local/com/example/my-library/0.0.1-SNAPSHOT/" --flat=true
