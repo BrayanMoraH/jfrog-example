@@ -27,3 +27,4 @@ jobs:
       - name: Upload Artifact to Artifactory
         run: |
           jf rt u "target/my-library-*.jar" "libs-release-local/"
+          jf rt u "target/my-library-*.pom" "libs-release-local/"
