@@ -10,14 +10,14 @@ jobs:
       - name: Build Project
         run: mvn clean package
 
+      - name: Copy POM file
+        run: cp pom.xml target/my-library.pom
+
       - name: Setup Jfrog CLI
         uses: jfrog/setup-jfrog-cli@v4
         env:
           JF_URL: ${{ vars.JF_URL }}
           JF_ACCESS_TOKEN: ${{ secrets.JF_ACCESS_TOKEN }}
-
-      - name: Copy POM file
-        run: cp pom.xml target/my-library.pom
 
 
       - name: Run JFrog CLI Ping and Publish Build Info
