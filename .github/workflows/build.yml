@@ -10,8 +10,8 @@ jobs:
       - name: Build Project
         run: mvn clean package
 
-      - name: Copy POM file
-        run: cp pom.xml target/my-library.pom
+      - name: Generate Effective POM
+        run: mvn help:effective-pom -Doutput=target/my-library.pom
 
       - name: Setup Jfrog CLI
         uses: jfrog/setup-jfrog-cli@v4
